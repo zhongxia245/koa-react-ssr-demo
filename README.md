@@ -1,7 +1,29 @@
 # koa-react-ssr-demo
 
+> 更新时间：2019-03-30 23:48:42
+
 > 学习的文章地址：https://juejin.im/post/5c90b4115188252d9559136c
 > 学习使用 react-ssr 的一个 demo 项目，主要用于学习，理解基础的 SSR 知识点，而不是注重于实战。
+
+## 零、GET START
+
+```bash
+# 下载项目
+git clone https://github.com/zhongxia245/koa-react-ssr-demo.git
+
+# 安装依赖
+npm install
+
+# 启动 client 和 server 端
+npm start & npm run server
+
+# 访问 http://localhost:9000
+
+# 构建（TODO）
+
+# 部署（TODO）
+
+```
 
 ## 一、创建 React 浏览器端开发环境
 
@@ -45,3 +67,11 @@
 - [ ] 再 SSR 下修改页面内容，没有自动刷新
 - [ ] 404 处理
 - [ ] SSR 错误处理不明显
+- [ ] 部署问题
+- [ ] 服务端直出，因为 CSS 还没有加载，会闪烁一下
+
+## 六、TODO
+
+- [ ] 使用 Next.js 重构
+- [ ] 采用 egg.js 替换 Koa
+- [ ] 封装一个脚手架
