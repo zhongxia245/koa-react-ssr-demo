@@ -6,7 +6,7 @@ import { StaticRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
 import createStore from '../../app/redux/store/create'
-import RouterConfig from '../../app/router'
+import Router from '../../app/router'
 
 // 匹配模板中的{{}}
 function templating(props) {
@@ -22,7 +22,7 @@ export default function(ctx, next) {
       const html = renderToString(
         <Provider store={store}>
           <StaticRouter location={ctx.url} context={data}>
-            <RouterConfig />
+            <Router />
           </StaticRouter>
         </Provider>
       )
@@ -34,9 +34,10 @@ export default function(ctx, next) {
       ctx.body = body
     }
   } catch (err) {
+    ctx.type = 'text/html'
     ctx.body = templating({ html: err.message })
   }
-  ctx.type = 'text/html'
+
   // 这里必须是return next() 不然异步路由是404
   return next()
 }

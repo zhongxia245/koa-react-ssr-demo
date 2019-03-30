@@ -29,7 +29,11 @@ module.exports = {
       {
         test: /\.less/,
         include: resolve('app'),
-        use: ['style-loader', 'css-loader', 'less-loader']
+        use: ['style-loader', 'css-loader?modules&localIdentName=[name]__[local]___[hash:base64:5]', 'less-loader']
+      },
+      {
+        test: /\.css/,
+        use: ['style-loader', 'css-loader']
       },
       {
         test: /\.(png|jpg|gif|jpeg|svg)$/,

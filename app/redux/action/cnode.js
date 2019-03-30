@@ -1,5 +1,5 @@
 import { getDetailById, getTopics } from '../../api'
-import { GET_TOPIC_DETAIL, GET_TOPIC } from '../constants/detail'
+import { GET_TOPIC_DETAIL, GET_TOPIC } from '../constants/cnode'
 
 // 获取文章详情
 export const actionGetTopicDetail = id => {

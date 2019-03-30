@@ -9,7 +9,7 @@ export default {
     })
     next()
   },
-  list: async (ctx, next) => {
+  article: async (ctx, next) => {
     let data = await Api.topic()
     ctx.render({
       list: {
@@ -19,13 +19,21 @@ export default {
     })
     next()
   },
-  detail: async (ctx, next) => {
+  articleDetail: async (ctx, next) => {
     const { id } = ctx.params
     let data = await Api.detail(id)
     ctx.render({
       detail: {
         ssr: true,
         data: data
+      }
+    })
+    next()
+  },
+  example: async (ctx, next) => {
+    ctx.render({
+      detail: {
+        ssr: true
       }
     })
     next()

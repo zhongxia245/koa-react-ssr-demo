@@ -4,10 +4,13 @@ import { connect } from 'react-redux'
 
 const Home = () => (
   <div>
+    <p>这个是首页</p>
+    <hr />
     <div>
-      <h1>首页</h1>
-      <Link to="/list">跳转列表页</Link>
-      <Link to="/detail/5bd4772a14e994202cd5bdb7">文章详情</Link>
+      <Link to="/article">跳转列表页</Link>
+      <br />
+      <br />
+      <Link to="/article/5bd4772a14e994202cd5bdb7">文章详情</Link>
     </div>
   </div>
 )

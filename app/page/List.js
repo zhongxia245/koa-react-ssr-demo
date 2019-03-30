@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { actionGetTopic } from '../redux/action/detail'
+import { actionGetTopic } from '../redux/action/cnode'
 
 const List = ({ ssr, data = [], getTopic }) => {
   useEffect(() => {
-    if (!ssr) {
+    if (!ssr && data.length === 0) {
       getTopic()
     }
   }, [])
@@ -16,7 +16,7 @@ const List = ({ ssr, data = [], getTopic }) => {
       <ul>
         {data.map((item, i) => (
           <li key={i}>
-            <Link to={`/detail/${item.id}`}>{item.title}</Link>
+            <Link to={`/article/${item.id}`}>{item.title}</Link>
           </li>
         ))}
       </ul>

@@ -1,4 +1,3 @@
-// reducers/home.js
 const defaultState = {
   title: 'Hello Redux , Hello Zhongxia'
 }

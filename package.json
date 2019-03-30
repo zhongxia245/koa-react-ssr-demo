@@ -34,7 +34,9 @@
   "dependencies": {
     "@babel/polyfill": "^7.4.0",
     "@babel/register": "^7.4.0",
+    "asset-require-hook": "^1.2.0",
     "axios": "^0.18.0",
+    "css-modules-require-hook": "^4.2.3",
     "koa": "^2.7.0",
     "koa-router": "^7.4.0",
     "react": "^16.8.6",

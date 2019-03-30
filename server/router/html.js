@@ -4,7 +4,8 @@ import htmlControl from '../controller/html'
 let router = new Router()
 
 router.get('/', htmlControl.home)
-router.get('/list', htmlControl.list)
-router.get('/detail/:id', htmlControl.detail)
+router.get('/article', htmlControl.article)
+router.get('/article/:id', htmlControl.articleDetail)
+router.get('/example', htmlControl.example)
 
 export default router

@@ -1,8 +1,8 @@
-import { GET_TOPIC } from '../constants/detail'
+import { GET_TOPIC } from '../constants/cnode'
 
 const defaultState = {
   ssr: false,
-  data: ['react真好玩', 'koa有点意思', 'ssr更有意思', 'good morning']
+  data: []
 }
 
 export default function(state = defaultState, action) {

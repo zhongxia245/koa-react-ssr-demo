@@ -1,4 +1,4 @@
-import { GET_TOPIC_DETAIL } from '../constants/detail'
+import { GET_TOPIC_DETAIL } from '../constants/cnode'
 
 const defaultState = {
   ssr: false,
