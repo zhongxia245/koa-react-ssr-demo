@@ -15,13 +15,22 @@ git clone https://github.com/zhongxia245/koa-react-ssr-demo.git
 npm install
 
 # 启动 client 和 server 端
-npm start & npm run server
+npm start / npm run dev
 
 # 访问 http://localhost:9000
 
 # 构建（TODO）
+npm run build
 
 # 部署（TODO）
+npm run deploy
+
+# 使用 pm2 进行部署
+npm run build 
+pm2 start pm2.json
+
+# 更新部署
+sh deploy.sh
 
 ```
 

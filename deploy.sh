@@ -8,6 +8,6 @@ cnpm i --production
 
 cnpm run build
 
-pm2 restart resume
+pm2 restart koa-react-ssr-demo
 
 echo 'deploy success...'

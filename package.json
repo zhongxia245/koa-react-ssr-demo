@@ -10,7 +10,7 @@
     "server": "cross-env NODE_ENV=production node ./server/index.js",
     "dev": "npm run client:dev & npm run server:dev",
     "start": "npm run dev",
-    "depoly": "npm run build && npm run server",
+    "deploy": "npm run build && npm run server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
