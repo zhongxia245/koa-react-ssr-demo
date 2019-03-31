@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { actionGetTopicDetail } from '../redux/action/cnode'
 
 const Detail = ({ ssr, data, getDetail, match }) => {
   useEffect(() => {
-    console.log('detail')
     if (!ssr) {
       getDetail(match.params.id)
     }
