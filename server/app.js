@@ -20,6 +20,6 @@ if (!IS_DEV) {
 app.use(templating(templatePath))
 app.use(routes.routes(), routes.allowedMethods())
 
-app.listen(9000, () => {
+app.listen(11000, () => {
   console.log(`node服务已经启动, 请访问 http://localhost:9000`)
 })
