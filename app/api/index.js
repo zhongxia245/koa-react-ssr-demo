@@ -16,3 +16,8 @@ export const getTopics = async () => {
   let result = await axios.get(`https://cnodejs.org/api/v1/topics`)
   return result.data
 }
+
+export const getReadme = async () => {
+  let html = await axios.get('/api/markdown/readme')
+  return html
+}

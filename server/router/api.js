@@ -6,5 +6,6 @@ let router = new Router({
 })
 router.get('/topic', ApiController.topic)
 router.get('/topic/:id', ApiController.detail)
+router.get('/markdown/readme', ApiController.readme)
 
 export default router

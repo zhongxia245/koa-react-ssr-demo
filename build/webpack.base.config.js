@@ -74,6 +74,11 @@ module.exports = config => {
       new HtmlWebpackPlugin({
         filename: 'index.html',
         template: resolve(config.template)
+        // inject: true,
+        // minify: {
+        //   removeComments: true,
+        //   collapseWhitespace: false
+        // }
       })
     ]
   }

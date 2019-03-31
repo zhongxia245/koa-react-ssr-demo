@@ -1,25 +1,23 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
+import { actionGetReadme } from '../redux/action/markdown'
 
-const Home = () => (
-  <div>
-    <p>这个是首页</p>
-    <hr />
-    <div>
-      <Link to="/article">跳转列表页</Link>
-      <br />
-      <br />
-      <Link to="/article/5bd4772a14e994202cd5bdb7">文章详情</Link>
-    </div>
-  </div>
-)
+const Home = ({ ssr, data, getReadme }) => {
+  useEffect(() => {
+    if (!ssr) {
+      getReadme()
+    }
+  }, [])
 
-/**
- * 通过connect将redux中的数据传递进入组件
- */
-function mapStateTpProps(state) {
-  return { ...state.home }
+  let html = typeof data === 'string' ? data : '这里是首页'
+  return <div className="markdown-body" dangerouslySetInnerHTML={{ __html: html }} />
 }
 
-export default connect(mapStateTpProps)(Home)
+export default connect(
+  ({ home }) => ({ ...home }),
+  dispatch => {
+    return {
+      getReadme: () => dispatch(actionGetReadme())
+    }
+  }
+)(Home)

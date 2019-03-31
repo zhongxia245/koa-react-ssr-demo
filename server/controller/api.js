@@ -1,14 +1,18 @@
-import axios from 'axios'
+import CnodeApi from '../service/cnode'
+import { getReadme } from '../service/markdown'
 
 export default {
   topic: async (ctx, next) => {
-    const resp = await axios.get('https://cnodejs.org/api/v1/topics')
-    ctx.body = resp.data.data
+    const data = await CnodeApi.topic()
+    ctx.body = data
   },
   detail: async (ctx, next) => {
     const { id } = ctx.params
-    console.log('detail:', id)
-    const resp = await axios.get(`https://cnodejs.org/api/v1/topic/${id}`)
-    ctx.body = resp.data.data
+    const data = await CnodeApi.detail(id)
+    ctx.body = data
+  },
+  readme: async (ctx, next) => {
+    const html = await getReadme()
+    ctx.body = html
   }
 }

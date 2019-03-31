@@ -1,16 +1,14 @@
-import Api from '../service/cnode'
+import CnodeApi from '../service/cnode'
+import { getReadme } from '../service/markdown'
 
 export default {
   home: async (ctx, next) => {
-    ctx.render({
-      home: {
-        title: '我是从node中获取的数据'
-      }
-    })
+    let html = await getReadme()
+    ctx.render({ home: { ssr: true, data: html } })
     next()
   },
   article: async (ctx, next) => {
-    let data = await Api.topic()
+    let data = await CnodeApi.topic()
     ctx.render({
       list: {
         ssr: true,
@@ -21,7 +19,7 @@ export default {
   },
   articleDetail: async (ctx, next) => {
     const { id } = ctx.params
-    let data = await Api.detail(id)
+    let data = await CnodeApi.detail(id)
     ctx.render({
       detail: {
         ssr: true,

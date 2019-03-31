@@ -18,7 +18,9 @@ export default path => (ctx, next) => {
   try {
     ctx.render = (data = {}) => {
       console.log(`>>>>: ${ctx.url}`)
+
       const store = createStore(data)
+
       const html = renderToString(
         <Provider store={store}>
           {/* 因为 SSR，不知道当前路径是什么，需要这里传过去 */}
